@@ -14,14 +14,15 @@ scores = [] #holds the values that are going to be inputed by the user
 
 def printGrades(scores): #function takes the grade and sorts them to tell the user where they stand
 	for grade in scores: #each grade is in the scores list
+		print 'Scores and Grades'
 		if grade  < 70:
-			print 'Your score is ',grade, 'and your letter grade is a D.'
+			print 'Score: ',grade, 'Your letter grade is a D.'
 		elif grade < 80:
-			print 'Your score is ',grade, 'and your letter grade is a C.'
+			print 'Score: ',grade, 'Your letter grade is a C.'
 		elif grade < 90:
-			print 'Your score is ',grade, 'and your letter grade is a B.'
+			print 'Score: ',grade, 'Your letter grade is a B.'
 		else:
-			print 'Your score is ',grade, 'and your letter grade is an A.'
+			print 'Score: ',grade, 'Your letter grade is an A.'
 	average = sum(scores)/len(scores) # takes the inputs and averages them
 	print 'Your average grade is',average,'.' #prints the average for the user to see
 
