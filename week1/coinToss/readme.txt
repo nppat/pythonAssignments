@@ -1,0 +1,1 @@
+There are two blocks of code written.  One uses random.randint(0,1) and the bottom one uses random.random() which is then sent to another variable to be rounded either up or down.  The basis for each is the same, I just wanted to see if I could use each one and have the same outcome of random numbers being generated.
