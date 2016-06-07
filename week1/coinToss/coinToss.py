@@ -9,9 +9,8 @@ Knowns:
 	use round() to round up or down
 
 Unknowns:
-
 '''
-
+'''
 import random
 
 def coinToss():
@@ -33,23 +32,35 @@ def coinToss():
 	return;
 
 coinToss()
+'''
+
 
 '''
 This block of code uses a random.random() that is then sent to variable x and is rounded either up or down.
-The basis of the rest of the code is the same as that above.
+The basis of the rest of the code is the same as that above.  I wanted to make sure I could use both ways, as I 
+had some problems getting the random.random() method to work using the round() function.
 
-zero = 0
-one = 0
-count = 0
-
-for count in range(0,5000):
-	r = random.random()
-	x = round(r)
-	if(x == 0):
-		count += 1
-		zero += 1
-	else:
-		count += 1
-		one += 1
-print "Attempts: ",count,"Zero's: ",zero,"One's: ",one
+Both work.
 '''
+import random
+
+def coinToss():
+	tails = 0
+	heads = 0
+	count = 0
+
+	for count in range(0,5000):
+		r = random.random()
+		x = round(r)
+		if(x == 0):
+			count += 1
+			tails += 1
+			print 'Attempt',count,'is heads.  The totals are ',heads,'heads and',tails,'tails.'
+		else:
+			count += 1
+			heads += 1
+			print 'Attempt',count,'is tails.  The totals are ',heads,'heads and',tails,'tails.'
+	print "Attempts: ",count,"Heads: ",heads,"Tails: ",tails
+	return;
+
+coinToss()
