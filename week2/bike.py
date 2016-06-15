@@ -29,27 +29,36 @@ class Bike(object): #Create the class
 		self.miles = miles
 
 	def displayInfo(self):
-		print "Bike # ",self.bike_name," Price - ",self.price," Max Speed - ",self.max_speed," Miles - ",self.miles
+		print "Bike # ",self.bike_name," Price - ",self.price," Max Speed - ",self.max_speed," Miles - ",self.miles,"\n"
+		return self # Returns its own instance, saves me from a lot of extra typing
 
 	def ride(self):
 		self.miles += 10 #Adds 10 miles to miles
 		print "Riding bike # ",self.bike_name," New mileage - ",self.miles
+		return self
 
 	def reverse(self):
 		if self.miles >= 5: #Checks to see if mileage is above 5 miles
 			self.miles -= 5
 			print "Reversing bike # ",self.bike_name," New mileage - ",self.miles
+		return self
+
 ''' Create 3 instances '''
 bike1 = Bike("1",20, '25mph',)
 bike2 = Bike("2",10, '20mph', 6)
 bike3 = Bike("3",15, '18mph', 8)
 
-''' Run the methods as described in the instructions '''
-bike1.ride(),bike1.ride(),bike1.ride()
-bike2.ride(),bike2.ride()
-bike1.reverse(),bike1.reverse()
-bike2.reverse(),bike2.reverse()
-bike3.reverse(),bike3.reverse(),bike3.reverse()
-bike1.displayInfo()
-bike2.displayInfo()
-bike3.displayInfo()
+# ''' Run the methods as described in the instructions '''
+# bike1.ride(),bike1.ride(),bike1.ride()
+# bike2.ride(),bike2.ride()
+# bike1.reverse(),bike1.reverse()
+# bike2.reverse(),bike2.reverse()
+# bike3.reverse(),bike3.reverse(),bike3.reverse()
+# bike1.displayInfo()
+# bike2.displayInfo()
+# bike3.displayInfo()
+
+''' Instances are shown calling all the methods, but using return self, saving a lot of extra typing'''
+bike1.ride().ride().ride().reverse().reverse().displayInfo()
+bike2.ride().ride().reverse().reverse().displayInfo()
+bike3.reverse().reverse().reverse().displayInfo()
