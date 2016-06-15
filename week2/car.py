@@ -35,7 +35,7 @@ class Car(object): #Create Class Car
 		print "Speed - ", self.speed
 		print "Fuel - ", self.fuel
 		print "Mileage - ", self.mileage
-		print "Taxes are $",tax,"\n"
+		print "Taxes are $",tax,"\n"  # "\n" creates a line break between instances
 
 # Created 5 different instances
 car1 = Car(1,1000,'35mph', '1/4', 5000) 
