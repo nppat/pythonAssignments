@@ -1,3 +1,5 @@
+import random # import the random module
+
 class Human(object):
 	def __init__(self, clan=None):
 		print "New Human!"
@@ -10,8 +12,19 @@ class Human(object):
 	def taunt(self):
 		print "You want a piece of me?"
 
-michael = Human('CodingDojo')
-jimmy = Human('CodingNija')
+	def attack(self):
+		self.taunt()
 
-print jimmy.clan
-print michael.strength
+		#use random to generate a number when we attack
+		luck = round(random.random() * 100)
+		if(luck > 50):
+			if(luck * self.stealth > 150):
+				print "Attacking!"
+				return True
+			else:
+				print "Attack failed"
+				return False
+		else:
+			self.health -= self.strength
+			print "Attack failed"
+			return False
